@@ -120,24 +120,22 @@ public class serverr
       String receiveMessage, sendMessage;
       Scanner inp = new Scanner( System.in );
       int op=0;
-      if((receiveMessage = receiveRead.readLine()) != null)
-      {
-          File fi = new File("ip_used.txt");
-          BufferedReader bi = new BufferedReader(new FileReader(fi));
-          String str = bi.readLine();
-          boolean flag2=false;
-          while(str != null){
-            if(receiveMessage.equals(str)){
-              System.out.println("System within the network wishes to connect. ");
-            }
-            else{
-              System.out.println("System outside the network wished to connect. ");
-            }
+      receiveMessage = receiveRead.readLine();
+      System.out.println("Client IP : "+ receiveMessage + "  ");
+      receiveMessage = receiveRead.readLine();
+      System.out.println("Client MAC : "+ receiveMessage + "  ");
+      System.out.println("Server IP : "+ server1.ip + " ");
+      receiveMessage = receiveRead.readLine();
+      if(receiveMessage.equals(server1.ip)){
+        System.out.print("Do you wish to connect to client (0/1) : ");
+        op=inp.nextInt();
 
-          }
-          System.out.print("Do you wish to connect to (0/1) : "+ receiveMessage + " : ");
-          op=inp.nextInt();
       }
+      else{
+        System.out.println("Client has provided Faulty IP");
+      }
+      
+      
       while(op==1)
       {
         System.out.print("Server : ");

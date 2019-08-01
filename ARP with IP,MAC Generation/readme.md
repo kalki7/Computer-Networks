@@ -9,4 +9,9 @@ This will initiate the server with respective IP and MAC Addresses from ip.txt a
 Now the server will check whether the client's IP is in the ip_used file which implies that it belongs to the network or not. The server will also be prompted with the client's IP address for a connection. After which the server and client will be able to communicate.
 
 Use CTRL+C to terminate connection
-For further clarification. Don't contact me. Please. Do. Not.
+
+**UPDATED**
+ARP Packet transmisstion and receieving.
+
+
+###For further clarification. Don't contact me. Please. Do. Not.

@@ -120,22 +120,36 @@ public class serverr
       String receiveMessage, sendMessage;
       Scanner inp = new Scanner( System.in );
       int op=0;
+      String cip,cmac,st;
       receiveMessage = receiveRead.readLine();
-      System.out.println("Client IP : "+ receiveMessage + "  ");
+      System.out.println("ARP PACKET : ");
+      st=new String(receiveMessage);
+      System.out.println("   Server IP : "+ server1.ip + " ");
+      System.out.println("   Server Mac : 00:00:00:00:00:00");
       receiveMessage = receiveRead.readLine();
-      System.out.println("Client MAC : "+ receiveMessage + "  ");
-      System.out.println("Server IP : "+ server1.ip + " ");
+      System.out.println("   Client IP : "+ receiveMessage + "  ");
+      cip=new String(receiveMessage);
       receiveMessage = receiveRead.readLine();
-      if(receiveMessage.equals(server1.ip)){
+      System.out.println("   Client MAC : "+ receiveMessage + "  ");
+      cmac=new String(receiveMessage);
+      if(st.equals(server1.ip)){
         System.out.print("Do you wish to connect to client (0/1) : ");
         op=inp.nextInt();
-
+        pwrite.println(server1.ip);
+        pwrite.flush();
+        pwrite.println(server1.mac);
+        pwrite.flush();
+      System.out.println("RARP PACKET : ");
+      System.out.println("   Client IP : "+ cip + "  ");
+      System.out.println("   Client MAC : "+ cmac + "  ");
+      System.out.println("   Server IP : "+ server1.ip + "  ");
+      System.out.println("   Client IP : "+ server1.mac + "  ");
+      System.out.println("CONNECTION ESTABLISHED  ");
+      System.out.println("");
       }
       else{
         System.out.println("Client has provided Faulty IP");
       }
-      
-      
       while(op==1)
       {
         System.out.print("Server : ");

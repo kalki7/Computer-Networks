@@ -122,12 +122,12 @@ public class clientt
      pwrite.flush();
      pwrite.println(client1.mac);
      pwrite.flush();
-     System.out.println("ARP PACKET : ");
+     System.out.println("ARP REQUEST PACKET : ");
      System.out.println("   Client IP : "+ client1.ip + "  ");
      System.out.println("   Client MAC : "+ client1.mac + "  ");
      System.out.println("   Server IP : "+ t + "  ");
      System.out.println("   Server MAC : 00:00:00:00:00 ");
-     System.out.println("RARP PACKET : ");
+     System.out.println("ARP REPLY PACKET : ");
      receiveMessage = receiveRead.readLine();
      System.out.println("   Client IP : "+ client1.ip + "  ");
      System.out.println("   Client MAC : "+ client1.mac + "  ");

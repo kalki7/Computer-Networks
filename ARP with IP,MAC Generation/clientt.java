@@ -114,7 +114,13 @@ public class clientt
 
      String receiveMessage, sendMessage;
      pwrite.println(client1.ip);
-
+     pwrite.flush();
+     pwrite.println(client1.mac);
+     pwrite.flush();
+     String t=new String();
+     System.out.print("Enter Server I.P : ");
+     t=keyRead.readLine();
+     pwrite.println(t);
      pwrite.flush();
      while(true)
      {

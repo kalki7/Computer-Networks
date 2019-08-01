@@ -122,7 +122,7 @@ public class serverr
       int op=0;
       String cip,cmac,st;
       receiveMessage = receiveRead.readLine();
-      System.out.println("ARP PACKET : ");
+      System.out.println("ARP REQUEST PACKET : ");
       st=new String(receiveMessage);
       System.out.println("   Server IP : "+ server1.ip + " ");
       System.out.println("   Server Mac : 00:00:00:00:00:00");
@@ -139,7 +139,7 @@ public class serverr
         pwrite.flush();
         pwrite.println(server1.mac);
         pwrite.flush();
-      System.out.println("RARP PACKET : ");
+      System.out.println("ARP REPLY PACKET : ");
       System.out.println("   Client IP : "+ cip + "  ");
       System.out.println("   Client MAC : "+ cmac + "  ");
       System.out.println("   Server IP : "+ server1.ip + "  ");

@@ -113,15 +113,29 @@ public class clientt
      BufferedReader receiveRead = new BufferedReader(new InputStreamReader(istream));
 
      String receiveMessage, sendMessage;
-     pwrite.println(client1.ip);
-     pwrite.flush();
-     pwrite.println(client1.mac);
-     pwrite.flush();
      String t=new String();
      System.out.print("Enter Server I.P : ");
      t=keyRead.readLine();
      pwrite.println(t);
      pwrite.flush();
+     pwrite.println(client1.ip);
+     pwrite.flush();
+     pwrite.println(client1.mac);
+     pwrite.flush();
+     System.out.println("ARP PACKET : ");
+     System.out.println("   Client IP : "+ client1.ip + "  ");
+     System.out.println("   Client MAC : "+ client1.mac + "  ");
+     System.out.println("   Server IP : "+ t + "  ");
+     System.out.println("   Server MAC : 00:00:00:00:00 ");
+     System.out.println("RARP PACKET : ");
+     receiveMessage = receiveRead.readLine();
+     System.out.println("   Client IP : "+ client1.ip + "  ");
+     System.out.println("   Client MAC : "+ client1.mac + "  ");
+     System.out.println("   Server IP : "+ t + "  ");
+     System.out.println("   Server MAC : "+ receiveMessage + "  ");
+     System.out.println("CONNECTION ESTABLISHED  ");
+     System.out.println("");
+     receiveMessage = receiveRead.readLine();
      while(true)
      {
        if((receiveMessage = receiveRead.readLine()) != null) //receive from server

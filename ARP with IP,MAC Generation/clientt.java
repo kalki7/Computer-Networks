@@ -47,7 +47,7 @@ public class clientt
        writer1.newLine();
        writer1.write(sti);
        writer1.close();
-       System.out.println("IP : "+sti);
+       //System.out.println("IP : "+sti);
        ip=new String(sti);
     }
     catch(IOException i)
@@ -111,6 +111,7 @@ public class clientt
                               // receiving from server ( receiveRead  object)
      InputStream istream = sock.getInputStream();
      BufferedReader receiveRead = new BufferedReader(new InputStreamReader(istream));
+     System.out.println("Your IP Address : "+client1.ip);
 
      String receiveMessage, sendMessage;
      String t=new String();
@@ -122,12 +123,12 @@ public class clientt
      pwrite.flush();
      pwrite.println(client1.mac);
      pwrite.flush();
-     System.out.println("ARP REQUEST PACKET : ");
+     System.out.println("Client is sending ARP REQUEST PACKET : ");
      System.out.println("   Client IP : "+ client1.ip + "  ");
      System.out.println("   Client MAC : "+ client1.mac + "  ");
      System.out.println("   Server IP : "+ t + "  ");
      System.out.println("   Server MAC : 00:00:00:00:00 ");
-     System.out.println("ARP REPLY PACKET : ");
+     System.out.println("Client is receiving ARP REPLY PACKET : ");
      receiveMessage = receiveRead.readLine();
      System.out.println("   Client IP : "+ client1.ip + "  ");
      System.out.println("   Client MAC : "+ client1.mac + "  ");
